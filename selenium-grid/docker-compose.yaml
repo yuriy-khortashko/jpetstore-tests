@@ -7,17 +7,32 @@ services:
     container_name: selenium-hub
     ports:
       - "4444:4444"
-  chrome:
+  chrome1:
     image: selenium/node-chrome
     depends_on:
       - selenium-hub
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
-  firefox:
-    image: selenium/node-firefox
+  chrome2:
+    image: selenium/node-chrome
     depends_on:
       - selenium-hub
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
+  chrome3:
+    image: selenium/node-chrome
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+
+#  firefox:
+#    image: selenium/node-firefox
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - HUB_HOST=selenium-hub
+#      - HUB_PORT=4444
