@@ -7,22 +7,22 @@ public class JPetStoreSteps {
 
     private JPetStorePages jPetStorePages;
 
-    @Step("Open Welcome page")
+    @Step("Given user on Welcome page")
     public void openWelcomePage() {
         jPetStorePages.openPage();
     }
 
-    @Step("EnterTheStore")
+    @Step("When user enters the store")
     public void enterTheStore() {
         jPetStorePages.enterTheStore();
     }
 
-    @Step("Open {0} category")
+    @Step("And user goes to {0} category")
     public void openCategory(String category) {
         jPetStorePages.openCategory(category);
     }
 
-    @Step("Check that {0} category is opened")
+    @Step("Then user should see available items on {0} Category page")
     public void checkIfCategoryIsOpened(String category) {
         jPetStorePages.checkIfCategoryIsOpened(category);
     }
