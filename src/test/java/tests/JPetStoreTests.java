@@ -17,6 +17,10 @@ import java.util.Collection;
 @Concurrent
 public class JPetStoreTests {
 
+    @Managed(driver = "chrome")
+    WebDriver chromeDriver;
+    @Steps
+    JPetStoreSteps jPetStoreSteps;
     private String category;
 
     public JPetStoreTests(String category) {
@@ -28,12 +32,6 @@ public class JPetStoreTests {
         return Arrays.asList(
                 new Object[][]{{"Fish"}, {"Dogs"}, {"Reptiles"}, {"Cats"}, {"Birds"}});
     }
-
-    @Managed(driver = "chrome")
-    WebDriver chromeDriver;
-
-    @Steps
-    JPetStoreSteps jPetStoreSteps;
 
     @Test
     public void testCategory() {
